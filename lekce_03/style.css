@@ -1,0 +1,31 @@
+::selection {
+    background-color: yellow;
+    color: black;
+}
+.barva1 {
+    color: red;
+}
+.barva2 {
+    color: blue;
+}
+.prvni {
+    background-color: yellow;
+}
+.cerny {
+    font-weight: bolder;
+    color: black;
+}
+.stred {
+    text-align: center;
+}
+.barva2:hover {
+    background-color: red;;
+}
+.barva2:active {
+    color: white;
+}
+p:nth-child(16) {
+    font-size: xx-large;
+}
+p::after {
+    content: "✨";
