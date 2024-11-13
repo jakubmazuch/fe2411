@@ -1,0 +1,20 @@
+P::first-letter {
+    font-size: xx-large;
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+}
+p:nth-child(2n) {
+    background-color: rgb(216, 216, 216);
+}
+
+/* střídání barev na konci řádků */
+p:nth-child(3n+1)::after {
+    content: " - 🔴";
+}
+p:nth-child(3n+2)::after {
+    content: " - 🟡";
+}
+p:nth-child(3n)::after {
+    content: " - 🟢";
+}
