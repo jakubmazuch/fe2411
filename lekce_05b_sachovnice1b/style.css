@@ -1,0 +1,36 @@
+table {
+     border-collapse: collapse;
+}
+
+td {
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    padding: 5px;
+    color: transparent;
+    text-align: center;
+}
+tr:nth-child(4n+1) td:nth-child(4n+1),
+tr:nth-child(4n+2) td:nth-child(4n+2),
+tr:nth-child(4n+3) td:nth-child(4n+3),
+tr:nth-child(4n) td:nth-child(4n) {
+    background-color: cadetblue;
+}
+tr:nth-child(4n+1) td:nth-child(4n+2),
+tr:nth-child(4n+2) td:nth-child(4n+3),
+tr:nth-child(4n+3) td:nth-child(4n),
+tr:nth-child(4n) td:nth-child(4n+1) {
+    background-color: rgb(13, 81, 84);
+}
+tr:nth-child(4n+1) td:nth-child(4n+3),
+tr:nth-child(4n+2) td:nth-child(4n),
+tr:nth-child(4n+3) td:nth-child(4n+1),
+tr:nth-child(4n) td:nth-child(4n+2) {
+    background-color: rgb(183, 223, 225);
+}
+tr:nth-child(4n+1) td:nth-child(4n),
+tr:nth-child(4n+2) td:nth-child(4n+1),
+tr:nth-child(4n+3) td:nth-child(4n+2),
+tr:nth-child(4n) td:nth-child(4n+3) {
+    background-color: rgb(25, 27, 27);
+}
