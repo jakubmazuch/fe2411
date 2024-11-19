@@ -7,14 +7,25 @@ td {
     height: 60px;
     border: 1px solid black;
     padding: 5px;
-    color: transparent;
     text-align: center;
 }
-tr:nth-child(2n) td:nth-child(2n),
-tr:nth-child(2n+1) td:nth-child(2n+1) {
-    background-color: rgb(160, 160, 255);
+.barva {
+    color: white;
 }
-tr:nth-child(2n) td:nth-child(2n+1),
-tr:nth-child(2n+1) td:nth-child(2n) {
-    background-color: rgb(0, 0, 111);
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd) {
+    background-color: #b3b3ff;
+}
+tr:nth-child(even) td:nth-child(even)::after,
+tr:nth-child(odd) td:nth-child(odd)::after {
+    content: "světlé";
+}
+tr:nth-child(even) td:nth-child(odd),
+tr:nth-child(odd) td:nth-child(even) {
+    background-color: rgba(0, 0, 55, 0.097);
+    color: white;
+}
+tr:nth-child(even) td:nth-child(odd)::after,
+tr:nth-child(odd) td:nth-child(even)::after {
+    content: "tmavé";
 }
