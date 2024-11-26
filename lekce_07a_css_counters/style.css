@@ -1,0 +1,33 @@
+body {
+    counter-reset: hlavniNadpis;
+}
+h1 {
+    counter-reset: podnadpis;
+}
+/* Kousek špatného kódu */
+h1 + p, h1 + p ~ p {
+    padding-left: 20px;
+}
+h2 + p, h2 + p ~ p {
+    padding-left: 40px;
+}
+h3 + p, h3 + p ~ p {
+    padding-left: 60px;
+}
+/* Konec kousku špatného kódu */
+
+h1::before {
+    counter-increment: hlavniNadpis;
+    content: counter(hlavniNadpis) " ";
+}
+h2 {
+    counter-reset: podpodnadpis;
+}
+h2::before {
+    counter-increment: podnadpis;
+    content: counter(hlavniNadpis) "." counter(podnadpis) " ";
+}
+h3::before {
+    counter-increment: podpodnadpis;
+    content: counter(hlavniNadpis) "." counter(podnadpis) "." counter(podpodnadpis) " ";
+}
