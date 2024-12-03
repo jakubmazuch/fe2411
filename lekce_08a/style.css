@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+
+/* Hlavička */
+header {
+    background-color: #BDD2D9;
+    position: sticky;
+    padding: 5px 10px;
+    top: 0;
+    text-align: justify;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 5px;
+}
+.menu a {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+.menu a:hover {
+    background-color: #7B86DB;
+    color: white;
+}
+
+/* Halvní část */
+.oddil {
+    padding: 40px;
+    text-align: justify;
+    border: 0.5px solid white;
+}
+.domu, .portfolio, .kontakt {
+    background: #7A85DB;
+
+}
+.onas, .historie {
+    background: #AC76DB;
+
+}
+
+footer {
+    background-color: #BDD2D9;
+    margin: 0;
+    padding: 20px;
+}
+@media screen and (min-width: 768px) {
+    header, .menu {
+        display: flex;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 1024px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
