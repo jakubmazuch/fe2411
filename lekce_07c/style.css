@@ -1,45 +1,34 @@
 table {
-    width: 600px;
     border-collapse: collapse;
-    margin: 0 auto;
+    width: 600px;
+    margin: 0 auto; 
 }
 td {
     height: 60px;
-    border: 1px solid black;
+    border: 1px solid grey;
     text-align: center;
     width: 60px;
-    vertical-align: middle;
 }
 
-/* counters */
+/* cislovani */
 tr:nth-child(1) {
     counter-reset: jedna;
 }
-tr:nth-child(1) > td::before {
-    counter-increment: jedna;
+tr:nth-child(1) td::before {
+    counter-increment: jedna 1;
     content: counter(jedna);
 }
-
 tr:nth-child(2) {
     counter-reset: dva;
 }
-tr:nth-child(2) > td::before {
+tr:nth-child(2) td::before {
     counter-increment: dva 2;
     content: counter(dva);
 }
-
 tr:nth-child(3) {
     counter-reset: tri;
 }
-tr:nth-child(3) > td::before {
+tr:nth-child(3) td::before {
     counter-increment: tri 3;
     content: counter(tri);
-}
-
-tr:nth-child(4) {
-    counter-reset: ctyri;
-}
-tr:nth-child(4) > td::before {
-    counter-increment: ctyri 4;
-    content: counter(ctyri);
 }
