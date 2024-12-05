@@ -1,4 +1,75 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background: rgb(230, 230, 230);
     padding: 10px;
+}
+
+/* header */
+.header {
+    background: white;
+    text-align: center;
+    padding: 25px;
+}
+.header h1 {
+    font-size: 40px;
+}
+
+/* nav */
+.nav {
+    background: rgb(0, 0, 110);
+    overflow: hidden;
+}
+.nav a {
+    color: white;
+    display: block;
+    padding: 15px 18px;
+    text-decoration: none;
+}
+.nav a:hover {
+    background-color: rgb(205, 205, 255);
+    color: black;
+}
+a.menu1 {
+    float: left;
+}
+a.menu2 {
+    float: right;
+}
+
+/* main */
+.main::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.left {
+    float: left;
+    width: 75%;
+}
+.right {
+    float: left;
+    width: 25%;
+}
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+    text-align: justify;
+}
+.fakeImg {
+    background-color: rgb(80, 80, 80);
+    width: 100%;
+    color: white;
+}
+
+/* footer */
+.footer {
+    background: gray;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
 }
