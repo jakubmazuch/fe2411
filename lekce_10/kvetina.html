@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Cvičení ellipse v SVG</title>
     <style>
         .react {
-            fill:none; 
-            stroke:#61dbfb; 
+            fill: none;
+            stroke: #61dbfb;
             stroke-width: 10;
         }
     </style>
 </head>
+
 <body>
     <h1>Cvičení <code>ellipse</code> v SVG</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit labore, tenetur nobis ad inventore vitae animi consectetur, nulla cumque ipsum beatae. Deserunt quod saepe quia architecto hic ducimus pariatur nam.
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit labore, tenetur nobis ad inventore vitae animi
+        consectetur, nulla cumque ipsum beatae. Deserunt quod saepe quia architecto hic ducimus pariatur nam.
     </p>
 
     <svg width="300px" height="300px" style="background-color: rgb(23, 219, 219)">
@@ -34,6 +37,22 @@
         <ellipse cx="150" cy="150" rx="100" ry="35" class="react" transform="rotate(120,150,150)" />
         <circle cx="150" cy="150" r="10" fill="#61dbfb" />
     </svg>
+    <svg width="300px" height="300px" style="border: 1px solid black;">
+        <circle cx="150" cy="150" r="100" style="fill:rgb(219, 173, 23)" />
+        <circle cx="0" cy="150" r="90" style="fill:white" />
+        <circle cx="300" cy="150" r="90" style="fill:white" />
+        <circle cx="150" cy="0" r="90" style="fill:white" />
+        <circle cx="150" cy="300" r="90" style="fill:white" />
+    </svg>
+
+    <svg width="100" height="100">
+        <a xlink:href="https://www.seznam.cz/">
+            <rect width="100" height="100" rx="20" style="fill: red;" />
+            <line x1="10" x2="90" y1="90" y2="10" style="stroke: white; stroke-width: 15;" />
+            <line x1="10" x2="90" y1="10" y2="90" style="stroke: white; stroke-width: 15;" />
+        </a>
+    </svg>
 
 </body>
+
 </html>
