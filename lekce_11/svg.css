@@ -1,0 +1,64 @@
+/* Fajfka */
+.fajfkaPozadi {
+    fill: rgb(100, 218, 100);
+    stroke: rgb(8, 90, 8);
+    stroke-width: 1;
+}
+
+.fajfkaVepredu {
+    fill: none;
+    stroke: rgb(8, 90, 8);
+    stroke-width: 9;
+}
+
+.fajfka:hover .fajfkaPozadi {
+    fill: rgb(8, 90, 8);
+    ;
+}
+
+.fajfka:hover .fajfkaVepredu {
+    stroke: rgb(100, 218, 100);
+}
+
+
+/* Křížek */
+.krizekPoz {
+    fill: rgb(218, 100, 100);
+    stroke: rgb(90, 8, 8);
+    stroke-width: 1;
+}
+
+.krizekCara {
+    fill: none;
+    stroke: rgb(90, 8, 8);
+    stroke-width: 9;
+}
+
+.krizek:hover .krizekPoz {
+    fill: rgb(90, 8, 8);
+}
+
+.krizek:hover .krizekCara {
+    stroke: rgb(218, 100, 100);
+}
+
+/* Menu */
+.menuPoz {
+    fill: rgb(197, 197, 197);
+    stroke: rgb(67, 67, 67);
+    stroke-width: 1;
+}
+
+.menuCara {
+    fill: none;
+    stroke: rgb(67, 67, 67);
+    stroke-width: 9;
+}
+
+.menu:hover .menuPoz {
+    fill: rgb(67, 67, 67);
+}
+
+.menu:hover .menuCara {
+    stroke: rgb(197, 197, 197);
+}

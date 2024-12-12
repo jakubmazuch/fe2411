@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.item {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    flex: 25%;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+    .item {
+        flex: 100%;
+    }
+    
+}
