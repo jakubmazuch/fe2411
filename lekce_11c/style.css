@@ -1,0 +1,104 @@
+.animace1 {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    position: relative;
+
+    /* animace */
+    animation-name: ctverec;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes ctverec {
+    0% {
+        background-color: yellow;
+        left: 0px;
+        border-radius: 0;
+    }
+    40% {
+        rotate: 360deg;
+    }
+    50% {
+        background-color: green;
+        left: 600px;
+        border-radius: 50%;
+        rotate: 360deg;
+    }
+    55% {
+        rotate: 90deg;
+    }
+    100% {
+        background-color: yellow;
+        left: 0px;
+        border-radius: 0;
+    }
+}
+
+
+.obdelnik {
+    width: 0;
+    height: 25px;
+    position: relative;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.animace2 {
+    background-color: red;
+    animation-name: animace2;
+}
+@keyframes animace2 {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 500px;
+    }
+}
+.animace3 {
+    background-color: green;
+    animation-name: animace3;
+}
+@keyframes animace3 {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 700px;
+    }
+}
+.animace4 {
+    background-color: purple;
+    animation-name: animace4;
+}
+@keyframes animace4 {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 350px;
+    }
+}
+.animace5 {
+    background-color: orange;
+    animation-name: animace5;
+}
+@keyframes animace5 {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 650px;
+    }
+}
+.animace6 {
+    background-color: blue;
+    animation-name: animace6;
+}
+@keyframes animace6 {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 500px;
+    }
+}

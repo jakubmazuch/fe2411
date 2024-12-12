@@ -1,0 +1,18 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin-top: 10px;
+    margin-left: 0;
+}
+div:hover {
+    width: 300px;
+    background-color: yellow;
+    margin-left: 20px;
+}
+.linearni {
+    transition: 
+        width 5s 1s linear, 
+        background-color 1s 2s ease-in-out, 
+        margin-left 2s 3s ease-in-out;
+}
