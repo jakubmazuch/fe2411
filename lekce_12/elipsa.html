@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        svg {
+            width: 200px;
+            height: 200px;
+            animation: rotace 1s linear infinite;
+        }
+        .elipsa {
+            fill: rgb(0, 183, 255);
+            stroke: blue;
+            stroke-width: 2;
+        }
+        @keyframes rotace {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg viewBox="-100 -100 200 200">
+        <ellipse cx="0" cy="0" rx="95" ry="50" class="elipsa" />
+    </svg>
+</body>
+</html>
