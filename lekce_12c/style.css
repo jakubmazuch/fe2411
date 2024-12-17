@@ -1,0 +1,31 @@
+.nacitac {
+    position: relative;
+}
+.loader {
+    fill: none;
+    stroke-width: 5;
+    stroke: blue;
+    stroke-linecap: round;
+}
+.loader.bg {
+    stroke-width: 10;
+    stroke: aquamarine;
+}
+.loader.ani {
+    animation: rotate 2s linear infinite;
+    stroke-dasharray: 230;
+}
+@keyframes rotate {
+    0% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 40 230;
+    }
+    50% {
+        stroke-dashoffset: 140;
+        stroke-dasharray: 140;
+    }
+    100% {
+        stroke-dashoffset: 280;
+        stroke-dasharray: 40 230;
+    }
+}
