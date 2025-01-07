@@ -1,0 +1,16 @@
+.animace {
+    animation: rotace 5s linear infinite;
+    transform-origin: 150px 150px;
+}
+.minutka {
+    animation: rotace 60s linear infinite;
+    transform-origin: 150px 150px;
+}
+@keyframes rotace {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }            
+}
