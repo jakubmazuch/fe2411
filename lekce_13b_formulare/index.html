@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formuláře</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Responzivní formulář</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur fugit veritatis repudiandae consectetur odit.
+        Atque esse quasi asperiores sunt, eveniet corporis impedit. Dolor minima ipsa nihil est modi, sapiente eveniet
+        odio officia eos quos vel quia officiis magnam ducimus, delectus maxime explicabo aspernatur numquam! Molestiae
+        recusandae, voluptas nisi quod, molestias sint ullam deleniti omnis nihil nobis quis laborum voluptatum
+        inventore. Recusandae distinctio vitae itaque aut necessitatibus. Nobis, asperiores ab repudiandae dolor
+        obcaecati totam ullam nostrum veritatis dolores quia. Saepe, labore.</p>
+
+    <div class="container">
+        <form action="#">
+            <div class="row">
+                <div class="col-25">
+                    <label for="jmeno">Jméno:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="jmeno" placeholder="Zadejte Vaše křestní jméno.">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="prijmeni">Příjmení:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="prijmeni" placeholder="Zadejte Vaše křestní příjmení.">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="zeme">Požadovaná destinace:</label>
+                </div>
+                <div class="col-75">
+                    <select name="zeme" id="zeme">
+                        <option value="cze">Česká republika</option>
+                        <option value="svk">Slovensko</option>
+                        <option value="pol">Polsko</option>
+                        <option value="rak">Rakousko</option>
+                        <option value="deu">Německo</option>
+                        <option value="ita">Itálie</option>
+                        <option value="fra">Francie</option>
+                        <option value="svy">Švýcarsko</option>
+                        <option value="nor">Norsko</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="zprava">Obsah sdělení:</label>
+                </div>
+                <div class="col-75">
+                    <textarea name="zprava" id="zprava" placeholder="Napište nám speciální požadavky"></textarea>
+                </div>
+            </div>
+
+
+
+
+            <input type="submit" value="Odeslat">
+        </form>
+    </div>
+
+</body>
+
+</html>
