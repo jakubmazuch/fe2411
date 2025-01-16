@@ -1,0 +1,15 @@
+/* Kalendář */
+td:hover:not(.zavreno) {
+    background-color: #aaaaff;
+    cursor: pointer;
+}
+
+td.zavreno {
+    color: red !important;
+    background-color: rgb(255, 230, 230) !important;
+    cursor: not-allowed;
+}
+
+td.zavreno::after {
+    content: "zavřeno";
+}

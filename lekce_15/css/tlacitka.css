@@ -1,0 +1,16 @@
+.klientPozadi {
+    background-color: rgb(212, 255, 203);
+}
+
+/* Moje tlačíka */
+.btn-moje {
+    background: white;
+    border-color: #aaaaff;
+    color: #aaaaff;
+    width: 200px;
+}
+
+.btn-moje:hover {
+    background: #aaaaff;
+    color: white;
+}

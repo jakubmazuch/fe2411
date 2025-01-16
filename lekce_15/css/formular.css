@@ -1,0 +1,43 @@
+.bg-green {
+    background-color: #86af33;
+}
+.text-form {
+    color: white;
+    text-shadow: 2px 2px 7px black;
+}
+.btn-zelena {
+    background: transparent;
+    border-color: white;
+    color: white;
+    text-overflow: 1px 1px 3px black;
+}
+.btn-zelena:hover {
+    background: white;
+    color: #86af33;
+    cursor: pointer;
+    text-shadow: none;
+}
+
+/* Ikony */
+.zprava {
+    min-height: 500px; /* nefunguje! */
+    background-image: url("../icon/zprava.png");
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 8px;
+}
+.email {
+    background-image: url("../icon/email.png");
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 8px;
+}
+.telefon {
+    background-image: url("../icon/telefon.png");
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 8px;
+}
+.zprava:focus, .email:focus, .telefon:focus {
+    background-image: none;
+}
