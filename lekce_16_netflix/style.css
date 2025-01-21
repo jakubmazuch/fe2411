@@ -1,0 +1,60 @@
+body, html {
+    height: 100%;
+}
+#hlavniCast {
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.67), rgba(0,0,0,0.67)), url('img/pozadi.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+.logo {
+    max-width: 120px;
+    max-height: 50px;
+}
+#loginTlacitko {
+    float: right;
+    border-style: none;
+    background-color: #E50914 !important;
+}
+.nadpis {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 120px;
+}
+.podnadpis {
+    color: white;
+    text-align: center;
+}
+.text {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.blokRegistrace {
+    display: flex;
+    justify-content: center;
+    min-height: 50px;
+}
+.formEmail {
+    width: 270px;
+    padding-left: 10px;
+}
+#formSubmit {
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    border-radius: 0;
+    font-size: 25px;
+    background-color: #E50914 !important;
+}
+#icon {
+    margin-left: 10px;
+}
