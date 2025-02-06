@@ -1,0 +1,108 @@
+body {
+  background-color: #c4c4ff;
+  padding: 50px;
+}
+
+a {
+  color: #c4c4ff;
+  text-decoration: none;
+}
+a:hover {
+  color: #5e5eff;
+}
+
+.mujSeznam ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.mujSeznam ul li {
+  padding: 10px;
+  margin: 5px;
+  background-color: #f4f4f4;
+}
+.mujSeznam ul li:hover {
+  background-color: #d57b7b;
+}
+
+.jinySeznam ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.jinySeznam ul li {
+  padding: 10px;
+  margin: 5px;
+  background-color: #f4f4f4;
+}
+.jinySeznam ul li:hover {
+  background-color: #8bd57b;
+}
+
+.item-1 {
+  width: 2em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+.item-2 {
+  width: 4em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+.item-3 {
+  width: 6em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+.item-4 {
+  width: 8em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+.item-5 {
+  width: 10em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+.item-6 {
+  width: 12em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+.item-7 {
+  width: 14em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+.item-8 {
+  width: 16em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+.item-9 {
+  width: 18em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+.item-10 {
+  width: 20em;
+  border: 1px solid black;
+  background-color: #fbffc4;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: #ff0000;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
