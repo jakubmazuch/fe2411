@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozdrav</title>
+</head>
+<body>
+    <script>
+        let cas = new Date();
+        let pozdrav;
+
+        if ((cas.getHours() > 3) && (cas.getHours() <= 9)) {
+            pozdrav = `Dobré ráno`;
+        } 
+        else if ((cas.getHours() > 9) && (cas.getHours() <= 11)) {
+            pozdrav = `Dobré dopoledne`;
+        } 
+        else if ((cas.getHours() > 11) && (cas.getHours() <= 13)) {
+            pozdrav = `Dobré poledne`;
+        } 
+        else if ((cas.getHours() > 13) && (cas.getHours() <= 15)) {
+            pozdrav = `Dobré odpoledne`;
+        } 
+        else if ((cas.getHours() > 16) && (cas.getHours() <= 19)) {
+            pozdrav = `Dobrý podvečer`;
+        } 
+        else if ((cas.getHours() > 19) && (cas.getHours() <= 23)) {
+            pozdrav = `Dobrý večer`;
+        } 
+        else {
+            pozdrav = `Přes noc nepracujeme.`;
+        }
+        document.write(pozdrav)
+    </script>
+</body>
+</html>

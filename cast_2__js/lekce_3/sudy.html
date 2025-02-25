@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .sudy {
+            color: green;
+        }
+        .lichy {
+            color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cislo = parseInt(prompt("Zadej číslo:"));
+        let hlaska;
+
+        if (cislo % 2 == 0) {
+            hlaska = `<p class='sudy'>Číslo ${cislo} je sudé.</p>`;
+        }
+        else {
+            hlaska = `<p class='lichy'>Číslo ${cislo} je liché.</p>`;
+        }
+
+        document.write(hlaska);
+    </script>
+</body>
+
+</html>

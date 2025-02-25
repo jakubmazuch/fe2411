@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cislo = parseInt(prompt("Zadejte číslo: "));
+        let hlaska;
+
+        if (cislo == 1) {
+            hlaska = `jedna`;
+        }
+        else if (cislo == 2) {
+            hlaska = `dva`;
+        }
+        else if (cislo == 3) {
+            hlaska = `tři`;
+        }
+        else if (cislo == 4) {
+            hlaska = `čtyři`;
+        }
+        else {
+            hlaska = `číslo neznám`;
+        }
+        document.write(hlaska);
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datum a čas</title>
+</head>
+<body>
+    <script>
+        let datum = new Date();
+        document.write(datum.getDate() + ". " + (datum.getMonth()+1) + ". " + datum.getFullYear() + ", " + datum.getHours() + ":" + datum.getMinutes() + ":" + datum.getSeconds() + "," + datum.getMilliseconds());
+        document.write("<hr>");
+        document.write(datum)
+    </script>
+</body>
+</html>

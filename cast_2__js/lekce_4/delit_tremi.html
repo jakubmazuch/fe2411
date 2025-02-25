@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cislo = parseInt(prompt("Zadej číslo:"));
+        let hlaska;
+
+        if (cislo % 3 == 0) {
+            hlaska = `<p>Číslo ${cislo} je dělitelné třemi.</p>`;
+        }
+        else {
+            hlaska = `<p>Číslo ${cislo} není dělitelné třemi.</p>`;
+        }
+
+        document.write(hlaska);
+    </script>
+</body>
+
+</html>
