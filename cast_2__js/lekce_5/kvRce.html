@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvadratická rovnice</title>
+    <script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+        </script>
+</head>
+
+<body>
+    <script>
+        let a = parseFloat(prompt("Kvadratická rovnice: ax^2+bx+c=0\nKoeficient kvadratického členu a:"))
+        let b = parseFloat(prompt("Kvadratická rovnice: ax^2+bx+c=0\nKoeficient kvadratického členu b:"))
+        let c = parseFloat(prompt("Kvadratická rovnice: ax^2+bx+c=0\nKoeficient kvadratického členu c:"))
+        let diskriminant = (Math.pow(b, 2) - 4 * a * c);
+        let vysledek = ``;
+        if (a != 0) {
+            if (diskriminant < 0) {
+                vysledek = `<p>Diskriminant je záporný, rovnice pro uvedené koeficienty a=${a}, b=${b}, c=${c} nemá řešení v R.</p>`;
+            }
+            else if (diskriminant == 0) {
+                let x = (-b / (2 * a));
+                vysledek = `Rovnice má v R jeden dvojnásobný kořen: <br> x=${x}`;
+            }
+            else {
+                let x1 = (-b + Math.sqrt(diskriminant)) / (2 * a);
+                let x2 = (-b - Math.sqrt(diskriminant)) / (2 * a);
+                vysledek = `Rovnice má v R dva různé kořeny: <br> x1=${x1} <br> x2=${x2}`;
+            }
+        }
+        else {
+            vysledek = `Není to kvadratická rovnice. Je mi to líto, nezlob se na mě.`;
+        }
+        document.write(vysledek);
+    </script>
+</body>
+
+</html>

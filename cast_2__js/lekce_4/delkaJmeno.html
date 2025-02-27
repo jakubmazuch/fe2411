@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let jmeno = prompt("Jak se jmenuješ?");
+        let vypis;
+        if (jmeno.length >= 3 && jmeno.length <= 10) {
+            vypis = `<p>Jméno ${jmeno} je normální.</p>`;
+        }
+        else {
+            vypis = `<p>Jmeno ${jmeno} je příliš krátké, nebo příliš dlouhé.</p>`;
+        }
+        document.write(vypis);
+
+    </script>
+</body>
+</html>
