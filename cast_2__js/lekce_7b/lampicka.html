@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="obrazek" src="img/on.gif" alt="obrazek">
+    <button id="prepinac">I/O</button>
+
+    <script>
+        const obrazek = document.getElementById("obrazek");
+        const prepinac = document.getElementById("prepinac");
+
+        const zapnuto = "img/on.gif";
+        const vypnuto = "img/off.gif";
+
+        prepinac.addEventListener("click", function() {
+            if (obrazek.src.includes(zapnuto)) {
+                obrazek.src = vypnuto;
+            }
+            else {
+                obrazek.src = zapnuto;
+            }
+        })
+    </script>
+</body>
+</html>
