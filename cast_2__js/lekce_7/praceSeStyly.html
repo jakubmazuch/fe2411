@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modra {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p id="odstavec">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque aut fuga soluta! Sapiente rerum dolor, facilis id officia suscipit eius aliquid quibusdam, totam aspernatur fugiat sunt eveniet deleniti quae, repellendus libero ea possimus nam laudantium voluptatum voluptatibus. Soluta sed minima laborum, sit error nobis rem repudiandae mollitia debitis dignissimos, commodi placeat. Perferendis error aliquid harum recusandae numquam pariatur accusamus modi, illo non facilis expedita incidunt veniam quibusdam ratione sint provident aliquam minus dolorem vel temporibus! Illum amet asperiores dolorum quasi molestiae officiis id esse maxime totam illo perferendis sequi nesciunt quod ex earum corrupti, assumenda error, iusto dignissimos repellat nihil.</p>
+    <button id="tlacitko">Změnit barvu</button>
+
+    <script>
+        const odstavec = document.getElementById("odstavec");
+        const tlacitko = document.getElementById("tlacitko");
+
+        tlacitko.addEventListener("click", function() {
+            odstavec.classList.toggle("modra");
+        })
+    </script>
+</body>
+</html>

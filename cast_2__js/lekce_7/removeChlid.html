@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <p id="del">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic deleniti a totam asperiores. Aperiam error quasi deserunt culpa suscipit quo temporibus vitae pariatur maiores ipsum. A id obcaecati perferendis.</p>
+    </div>
+
+    <p id="druhy">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt illo repellat, vel earum voluptatibus architecto libero repudiandae. Doloribus dolores officiis quidem porro eaque aliquid natus qui, id et? Hic ratione doloribus ullam distinctio sequi sapiente, beatae quos, debitis possimus nulla earum. Voluptates blanditiis beatae dignissimos vel officiis repellat tempora tempore eligendi ut doloremque, placeat ducimus? Porro, fuga sunt nobis voluptates incidunt quo minima dignissimos illum, in, nihil vitae? Iusto repudiandae non officia suscipit nesciunt aut recusandae et id fugit, explicabo corporis voluptatibus sint facere esse odio error maxime, culpa, exercitationem rerum reprehenderit. Velit vitae delectus illum. Unde quis deserunt molestiae veniam eligendi, dolor, provident suscipit ipsam quidem blanditiis saepe quisquam iure esse voluptatibus ab dolores error! Dolores dolor, alias suscipit nisi itaque culpa nobis iusto aliquam quis, cupiditate illo nemo magnam provident labore at ad error ut voluptate atque perspiciatis eos ipsam blanditiis. Distinctio ut accusantium, impedit, commodi, quibusdam qui molestias sint nisi enim possimus dicta veniam? Voluptatibus, neque? Consequatur ex, illo aliquid porro aspernatur ut nesciunt est modi voluptatem eligendi sint odio! Eum dolore inventore quos provident consectetur quasi similique animi saepe asperiores id, vel dolor tempora incidunt quis, porro cupiditate corrupti facere nisi perferendis sit neque quo aut! Ex odio fugiat quibusdam, veniam eaque, maxime, consequuntur provident porro repudiandae nisi dolores cumque reiciendis unde praesentium placeat numquam sed facilis molestias nemo non aspernatur laboriosam quae? Distinctio eligendi, recusandae ipsam dolores nisi perspiciatis dolor odio cumque? Repellendus dolorem vero unde ipsa velit, labore deserunt debitis, voluptate repudiandae eligendi doloribus.</p>
+
+    <script>
+        // první způsob
+        const rodic = document.getElementById("container");
+        const dite = document.getElementById("del");
+
+        rodic.removeChild(dite);
+
+        // druhý způsob
+        const druhyOdstavec = document.getElementById("druhy");
+        druhyOdstavec.addEventListener("click", function() {
+            druhyOdstavec.remove();
+        });
+    </script>
+</body>
+</html>

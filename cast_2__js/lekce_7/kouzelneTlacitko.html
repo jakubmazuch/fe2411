@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const tlacitko = document.createElement("button");
+        tlacitko.textContent = "Klikni na mě!";
+        tlacitko.addEventListener("click", function() {
+            const novyOdstavec = document.createElement("p");
+            novyOdstavec.textContent = "Kliknul jsi na mě";
+            document.body.appendChild(novyOdstavec)
+        });
+        document.body.appendChild(tlacitko);
+    </script>
+</body>
+</html>

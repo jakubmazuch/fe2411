@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Dark/Light přepínač</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s, color 0.5s;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .dark {
+            background-color: #121212;
+            color: #f1f1f1;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a id="prepinac" href="#">Přepnout na tmavý režim</a>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi facilis, unde perferendis esse illo ipsum cumque tempore culpa placeat impedit deserunt natus possimus libero voluptatem minima, delectus officiis debitis? Enim?</p>
+
+    <script>
+        const prepinac = document.getElementById("prepinac");
+        const telo = document.body;
+
+        prepinac.addEventListener("click", function(event) {
+            event.preventDefault(); // zabrání načtení stránky
+            telo.classList.toggle("dark");
+
+            if (telo.classList.contains("dark")) {
+                prepinac.textContent = "Přepnout na světlý režim";
+            } else {
+                prepinac.textContent = "Přepnout na tmavý režim";
+            }
+        });
+    </script>
+</body>
+</html>
