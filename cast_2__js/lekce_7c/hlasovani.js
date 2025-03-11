@@ -10,12 +10,15 @@ const textSlon = document.getElementById('hlasySlon');
 const textTygr = document.getElementById('hlasyTygr');
 const textZirafa = document.getElementById('hlasyZirafa');
 
-obrSlon.addEventListener('click', function() {
-
+obrSlon.addEventListener('click', function () {
+    hlasySlon++;
+    textSlon.textContent = `Počet hlasů: ${hlasySlon}`;
 });
-obrTygr.addEventListener('click', function() {
-
+obrTygr.addEventListener('click', function () {
+    hlasyTygr++;
+    textTygr.textContent = `Počet hlasů: ${hlasyTygr}`;
 });
-obrZirafa.addEventListener('click', function() {
-
+obrZirafa.addEventListener('click', function () {
+    hlasyZirafa++;
+    textZirafa.textContent = `Počet hlasů: ${hlasyZirafa}`;
 });
