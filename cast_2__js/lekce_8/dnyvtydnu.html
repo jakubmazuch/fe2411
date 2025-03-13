@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dny = ["pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota", "neděle", "pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota", "neděle"];
+        dny.unshift("neděle");
+        dny.pop();
+        let dnes = new Date();
+        let denTydne = dnes.getDay();
+        document.write(`Dnes je ${dny[denTydne]}. Zítra je ${dny[denTydne+1]}. Pozítří je ${dny[denTydne+2]}. Popozítří je ${dny[denTydne+3]}. A další den bude ${dny[denTydne+4]}.`);
+    </script>
+</body>
+</html>

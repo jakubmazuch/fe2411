@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ovoce = ["jablko", "hruška", "banan", "malina", "meruňka", "třešeň", "broskev", "rajče", "mandarinka"];
+        ovoce.splice(2, 3);
+        for (let aktualniOvoce of ovoce) {
+            document.write(aktualniOvoce + "<br>");
+        }
+        document.write("<hr>");
+        ovoce.splice(2);
+        for (let aktualniOvoce of ovoce) {
+            document.write(aktualniOvoce + "<br>");
+        }
+        document.write("<hr>");
+        ovoce.splice(2, 0, "zelí");
+        for (let aktualniOvoce of ovoce) {
+            document.write(aktualniOvoce + "<br>");
+        }
+        document.write("<hr>");
+        ovoce.splice(2, 1, "mandle");
+        ovoce.splice(3, 1, "hroznové víno");
+        for (let aktualniOvoce of ovoce) {
+            document.write(aktualniOvoce + "<br>");
+        }
+    </script>
+</body>
+</html>
