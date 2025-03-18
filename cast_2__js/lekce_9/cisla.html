@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<ul>");
+        let cisla = [];
+        // Uložení hodnot do pole
+        for (let i = 0; i < 10; i++) {
+            cisla[i] = 10 - i;
+        }
+        // Výpis
+        for (let cislo of cisla) {
+            document.write(`<li>${cislo}</li>`);
+        }
+        document.write("</ul>");
+
+        document.write("<hr>")
+
+        document.write("<ul>");
+        let jinaCisla = [];
+        // Uložení hodnot do pole
+        for (let i = 0; i < 10; i++) {
+            jinaCisla[i] = i+1;
+        }
+        jinaCisla.reverse();
+        // Výpis
+        for (let jineCislo of jinaCisla) {
+            document.write(`<li>${jineCislo}</li>`);
+        }
+        document.write("</ul>");
+    </script>
+
+    <ol start="10" reversed>
+        <li>neco</li>
+        <li>neco</li>
+        <li>neco</li>
+        <li>neco</li>
+        <li>neco</li>
+        <li>neco</li>
+        <li>neco</li>
+        <li>neco</li>
+        <li>neco</li>
+        <li>neco</li>
+    </ol>
+</body>
+</html>

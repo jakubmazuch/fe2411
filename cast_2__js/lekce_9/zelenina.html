@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // By ChatGPT
+        let ovoce = [
+            "jablko",
+            "hruska",
+            "banan",
+            "pomeranc",
+            "mandarinka",
+            "citron",
+            "grapefruit",
+            "ananas",
+            "kiwi",
+            "mango",
+            "papaja",
+            "hroznove vino",
+            "meloun",
+            "vodni meloun",
+            "svestka",
+            "tresen",
+            "visen",
+            "malina",
+            "jahoda",
+            "boruvka"
+        ];
+
+        let zelenina = [
+            "mrkev",
+            "okurka",
+            "rajce",
+            "paprika",
+            "celer",
+            "petrzel",
+            "redkvicka",
+            "kedluben",
+            "kvetak",
+            "brokolice",
+            "zeli",
+            "kapusta",
+            "lilek",
+            "cuketa",
+            "hrasek",
+            "fazole",
+            "spenat",
+            "mangold",
+            "kukurice",
+            "cesnek"
+        ];
+
+        let vstup = prompt("Zadej název ovoce nebo zeleniny: ")
+            .trim()
+            .toLowerCase();
+
+        let nalezeno = false;
+        let vystup = "";
+        // pokusíme se vyhledat vstup v ovocích
+        for (let i = 0; i < ovoce.length; i++) {
+            if (ovoce[i] == vstup) {
+                vystup = "Zadal jsi ovoce.";
+                nalezeno = true;
+            }
+        }
+        // pokusíme se vyhledat vstup v zelenině
+        for (let i = 0; i < zelenina.length; i++) {
+            if (zelenina[i] == vstup) {
+                vystup = "Zadal jsi zeleninu.";
+                nalezeno = true;
+            }
+        }
+
+        // nic nenalezeno
+        if (!nalezeno) {
+            vystup = "Nemám šajna, co jsi zadal.";
+        }
+
+        document.write(`<p>${vystup}</p>`);
+
+    </script>
+</body>
+
+</html>

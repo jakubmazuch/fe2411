@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ceny = [3500, 2800, 1280, 1920, 4320];
+        let suma = 0;
+        for (let cena of ceny) {
+            suma += cena;
+        }
+        let prumer = suma / ceny.length;
+        let odchylka = prumer - ceny[2];
+        document.write(`<p>Třetí produkt se od průměrné ceny liší o ${odchylka} Kč.</p>`);
+    </script>    
+</body>
+</html>
