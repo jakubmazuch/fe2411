@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let kinosal = [];
+
+        for (let i = 0; i < 5; i++) {
+            kinosal[i] = [];
+            for (let j = 0; j < 5; j++) {
+                kinosal[i][j] = 0;
+            }
+        }
+
+        kinosal[2][2] = 1;
+
+        for (let i = 1; i < 4; i++) {
+            kinosal[3][i] = 1;
+        }
+
+        for (let i = 0; i < 5; i++) {
+            kinosal[4][i] = 1;
+        }
+
+        for (let i = 0; i < kinosal.length; i++) {
+            for (let j = 0; j < kinosal[i].length; j++) {
+                document.write(kinosal[i][j] + " ")
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
