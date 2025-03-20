@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+.container {
+    display: inline-block;
+    margin: 10px;
+}
+img {
+    width: 350px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+img:hover {
+    transform: scale(1.1);
+}
