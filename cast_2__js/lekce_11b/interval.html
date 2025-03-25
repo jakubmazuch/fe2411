@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function jeVIntervalu(cislo, dolniMez, horniMez) {
+            let hlaska = "";
+            if (cislo >= dolniMez && cislo <= horniMez) {
+                hlaska = "Číslo " + cislo + " je v intervalu <" + dolniMez + "; " + horniMez + ">.";
+            }
+            else {
+                hlaska = "Číslo " + cislo + " NENÍ v intervalu <" + dolniMez + "; " + horniMez + ">.";
+            }
+            return hlaska;
+        }
+
+        let vstup = parseFloat(prompt("Zadej číslo: "));
+        let a = parseFloat(prompt("Zadej dolní mez: ")); // dolní mez
+        let b = parseFloat(prompt("Zadej horní mez: ")); // horní mez
+
+        document.write(jeVIntervalu(vstup, a, b));
+
+    </script>
+</body>
+
+</html>
