@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function trojuhelnik(a,b,c) {
+            if (a+b>c && b+c>a && a+c>b && a!=0 && b!=0 && c!=0) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+
+        let stranaA = parseInt(prompt("Zadejte stranu A:"));
+        let stranaB = parseInt(prompt("Zadejte stranu B:"));
+        let stranaC = parseInt(prompt("Zadejte stranu C:"));
+
+        document.write(trojuhelnik(stranaA, stranaB, stranaC));
+    </script>
+</body>
+</html>

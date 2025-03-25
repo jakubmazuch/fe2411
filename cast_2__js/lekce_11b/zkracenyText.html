@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function zkrat(text, delka = 20) {
+            if (text.length-3 > delka) {
+                text = text.substring(0, delka-3) + "...";
+            }
+            return text;
+        }
+
+        let lorem = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio adipisci similique, labore vel consequatur deserunt aliquid, sequi consequuntur vero magnam cumque. Animi natus, iure aliquam, recusandae atque quas consequatur temporibus architecto, illo esse consectetur. Sunt quos commodi veritatis harum perspiciatis. Sint accusantium vero, odio sed ipsa similique officia repellat distinctio non a maiores autem atque adipisci voluptatem, optio reiciendis tenetur impedit totam laudantium error inventore dignissimos. Molestiae praesentium impedit numquam et facilis at, voluptatem temporibus blanditiis magnam tenetur nemo quia iusto quaerat eveniet dolorem totam soluta velit commodi similique sit autem nesciunt? Saepe vitae minima eos vel debitis animi soluta temporibus quod, ipsum veniam voluptatem fuga corrupti ducimus possimus ea quaerat repudiandae! In, aperiam. Numquam, ullam. Aperiam aut amet tempore corporis ea vitae officiis magni aliquid ducimus ad, sunt incidunt eos quae voluptate cupiditate autem reprehenderit ipsam dicta distinctio reiciendis! Saepe, ducimus! Labore quam totam quasi minus. Repellendus, enim iure, blanditiis voluptatem quo porro ipsum, in culpa nulla impedit non. Vitae harum inventore dicta magnam nobis, cumque fugit illo, quas natus nulla excepturi ad deserunt, autem repellat obcaecati ducimus hic similique quidem commodi eius asperiores voluptas sunt atque? Molestias maxime amet nisi alias quidem id asperiores, aliquid voluptatibus officiis officia aspernatur voluptatem, vitae temporibus. Ipsa, enim quis blanditiis distinctio veritatis saepe quasi perspiciatis eum, ipsum deleniti corrupti ipsam, libero dicta ab incidunt exercitationem sunt necessitatibus ullam repellat non quam? Perferendis aspernatur, hic harum reiciendis excepturi velit eaque consectetur aut voluptas quidem accusantium iure laborum, voluptatibus quibusdam tempore cumque deserunt, temporibus debitis quam inventore blanditiis? Nesciunt quibusdam rem, vero mollitia impedit tempora autem eum vel consequatur minima labore amet, cum ipsum? Dignissimos ab mollitia, placeat ullam, voluptatem consequatur velit in porro iste nihil, fugit exercitationem! Optio blanditiis impedit omnis voluptate? Quasi, labore ullam! Ut adipisci tempora, hic tenetur maxime labore vitae.";
+        let zkraceny = zkrat(lorem, 50);
+
+        document.write("<p><strong>Původní text: </strong>" + lorem + "</p>");
+        document.write("<p><strong>Zkrácený text: </strong>" + zkraceny + "</p>");
+    </script>
+</body>
+</html>
