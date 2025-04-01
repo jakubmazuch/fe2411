@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function datumCesky(datum) {
+            const mesice = ["ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince"];
+
+            let den = datum.getDate();
+            let mesic = mesice[datum.getMonth()]; /* vrátit se */
+            let rok = datum.getFullYear();
+
+            return `${den}. ${mesic} ${rok}`;
+        }
+
+        let dnes = new Date();
+        let dny = parseInt(prompt("Zadejte počet dní: "))
+
+        if (!isNaN(dny)) {
+            let budoucnost = new Date(dnes)
+            budoucnost.setDate(budoucnost.getDate() + dny);
+
+            document.write(`Dnes je ${datumCesky(dnes)} a za ${dny} dní bude ${datumCesky(budoucnost)}`);
+        }
+        else {
+            document.write(`Dnes je ${datumCesky(dnes)}.`);
+        }
+
+    </script>
+</body>
+
+</html>

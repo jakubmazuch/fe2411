@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datum a čas</title>
+</head>
+
+<body>
+    <script>
+        function preved(poradi) {
+            const mesice = ["ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince"];
+            return mesice[poradi];
+        }
+
+        let datum = new Date();
+        let mesicCZ = preved(datum.getMonth());
+        document.write(datum.getDate() + ". " + mesicCZ + " " + datum.getFullYear());
+    </script>
+</body>
+
+</html>

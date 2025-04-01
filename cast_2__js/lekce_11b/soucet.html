@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function soucet(cisla) {
+            cisla.sort(function (a, b) { return b - a }); /* Seřadíme čísla v poli od největšího po nejmenší */
+            return cisla[0] + cisla[1] + cisla[2];
+        }
+
+        let cisla = [15, 8, 14, 22, 56, 45, 78, 62, 4, 1, 1, 45, 78, 74];
+        document.write(`Součet tří největších čísel je ${soucet(cisla)}`);
+    </script>
+</body>
+
+</html>
