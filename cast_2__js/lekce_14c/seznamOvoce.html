@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break</title>
+</head>
+<body>
+    <ul id="seznamOvoce">
+        <li>Jablko</li>
+        <li>Hruška</li>
+        <li>Meruňka</li>
+        <li>Třešeň</li>
+        <li>Švestka</li>
+    </ul>
+
+    <script>
+        let kolekce = document.getElementById('seznamOvoce');
+        for (let ovoce of kolekce.childNodes) {
+            if (ovoce.textContent === 'Hruška') {
+                kolekce.removeChild(ovoce);
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

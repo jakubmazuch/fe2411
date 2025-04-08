@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porovnávání a přetypování v JS</title>
+</head>
+<body>
+    <p id="neco">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora officiis, ad impedit possimus corporis, placeat odit voluptas assumenda deleniti in est blanditiis cum consectetur, eaque suscipit cupiditate debitis voluptates voluptatum!</p>
+    <script>
+        let htmlElement = document.getElementById("neco");
+        if (htmlElement) {
+            document.write("Element nalezen<br>" + htmlElement.innerText);
+        }
+        else {
+            document.write("Element nenalezen");
+        }
+
+    </script>
+</body>
+</html>

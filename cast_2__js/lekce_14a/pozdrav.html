@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podmínky s undefinied</title>
+</head>
+<body>
+    <script>
+        function pozdrav(jazyk = 'en') {
+            if (jazyk === 'en')
+                document.write('Hello');
+            else if (jazyk === 'cz')
+                document.write('Čau!')
+
+            document.write('<br>');
+        }
+
+        pozdrav('cz');
+    </script>
+</body>
+</html>
