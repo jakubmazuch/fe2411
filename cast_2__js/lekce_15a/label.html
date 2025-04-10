@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let zamestnanci = [
+            ['Karel Novák', ['pečivo', 'nápoje']],
+            ['Martin Svoboda', ['elektro']],
+            ['Kateřina Vernerová', ['mražené výrobky', 'mléčné výrobky']],
+            ['Dita Soukupová', ['domácí potřeby']],
+            ['Terry Janů', ['alkohol', 'léčiva', 'zahrada']],
+        ]
+
+        cyklusZamestnanci: for (let zamestnanec of zamestnanci) {
+            for (let oddeleni of zamestnanec[1]) {
+                document.write('Tady je jen vnitřní cyklus.<br>');
+                if (oddeleni === 'elektro') {
+                    document.write('Oddělení elektro má na starosti ' + zamestnanec[0] + '.<br>');
+                    break cyklusZamestnanci;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
