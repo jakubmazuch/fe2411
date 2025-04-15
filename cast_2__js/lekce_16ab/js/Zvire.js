@@ -8,6 +8,6 @@ class Zvire {
         this.vek = vek;
     }
     predstavSe() {
-        document.write(`Jsem ${this.druh} a mám ${this.pocetTlap} tlap. Jmenuji se ${this.jmeno} a je mi ${this.vek} let. Těší mě. :)<br>`);
+        return `Jsem ${this.druh} a mám ${this.pocetTlap} tlap. Jmenuji se ${this.jmeno} a je mi ${this.vek} let. Těší mě. :)`;
     }
 }
