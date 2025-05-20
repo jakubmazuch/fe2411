@@ -1,0 +1,5 @@
+a = int(input("Zadej počet týdnu: "))
+print("Počet dnů je:", a * 7)
+print("Počet hodin je:", a * 7 * 24)
+print("Počet minut je:", a * 7 * 24 * 60)
+print("Počet sekund je:", a * 7 * 24 * 60 * 60)
