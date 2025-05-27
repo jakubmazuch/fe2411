@@ -8,5 +8,4 @@ else:
         if cislo % delitel == 0:
             delitele.append(delitel)
 
-    print(
-        f"Počet dělitelů čísla {cislo} je {len(delitele)} a jsou jimi čísla {", ".join(str(x) for x in delitele)}.")
+    print(f"Počet dělitelů čísla {cislo} je {len(delitele)} a jsou jimi čísla {", ".join(str(x) for x in delitele)}.")
