@@ -9,4 +9,4 @@ if a != 0 and b != 0:
     else:
         print("Žádné číslo není dělitelné druhým číslem.")
 else:
-    print("Nula není dělitelné číslo.")
+    print("Nula není dělitelné číslo.")"""
