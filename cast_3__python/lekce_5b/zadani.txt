@@ -1,0 +1,12 @@
+1) Faktoriál
+2) Obvod, obsah čtverce / obdélníku
+3) Počet samohlásek
+4) Převod celé jména na iniciály
+5) Počet mezer v textu
+5) Počet slov v textu
+
+6) Počet výskytů určitého znaku v textu
+7) Zvrácení řetezce - př.: vstup: Muchomůrka výstup: akrůmohcuM
+8) Detekce palindromu (př. radar) -- True
+9) Z každého slova v textu vezmi první písmeno a vrať je jako zkratku
+*) Hvězdičky do pravoúhlého trojúhleníku
