@@ -1,0 +1,9 @@
+Výjimky, try-except
+
+Čtyři nejčastějí typy chyb:
+    SyntaxError
+    ZeroDivisionError
+    TypeError (např. sčítání int a str)
+    ValueError (nesprávná hodnota)
+    další chyby, viz https://docs.python.org/3.12/library/exceptions.html
+
