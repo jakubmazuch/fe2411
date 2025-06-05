@@ -1,0 +1,5 @@
+Knihovny
+ - turtle
+ - tkinter (GUI)
+
+ Práce se soubory
