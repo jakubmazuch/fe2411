@@ -1,0 +1,8 @@
+Knihovny - turtle
+Práce se soubory
+
+ČT
+OOP
+
+ÚT
+ - tkinter (GUI) / Django
