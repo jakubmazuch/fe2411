@@ -29,7 +29,7 @@ for i in range(len(prijati)):
     if i < 90:
         html += f"<li style='background-color: #c9ffd1'><b>{jmeno} - počet bodů: {body} b.</b></li>\n"
     else:
-        html += f"<li style='background-color: #ffc9d1'>{jmeno} - počet bodů: {body} b.</></li>\n"
+        html += f"<li style='background-color: #ffc9d1'>{jmeno} - počet bodů: {body} b.</li>\n"
 
 
 html += "</ol>\n</body>\n<html>"
