@@ -2,8 +2,9 @@ dolniHranice = int(input("Zadejte spodní hranici věku: "))
 horniHranice = int(input("Zadejte horní hranici věku: "))
 
 pocetOsob = 0
+cesta = 'D:/xampp/htdocs/www/itstep/fe2411/fe2411/cast_3__python/lekce_8b_soubory/jmena.csv'
 
-with open('D:/xampp/htdocs/www/itstep/fe2411/fe2411/cast_3__python/lekce_8b_soubory/jmena.csv', 'r', encoding='utf-8') as file:
+with open(cesta, 'r', encoding='utf-8') as file:
     for radek in file:
         casti = radek.strip().split(',')
 

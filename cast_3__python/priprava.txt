@@ -2,6 +2,8 @@ Knihovny - turtle
 Práce se soubory
 
 ČT
+Práce se soubory (write)
+Najít nejstaršího a nejmladšího
 OOP
 
 ÚT
