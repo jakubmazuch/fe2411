@@ -1,2 +1,3 @@
-ÚT
- - OOP
+ČT 19.6.
+1) Django - instalace (2 hodiny)
+2) OOP / ú6, ú5?
