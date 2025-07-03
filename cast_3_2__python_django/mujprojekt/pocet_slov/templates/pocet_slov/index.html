@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Počet slov</title>
+    <link rel="stylesheet" href="{% static 'pocet_slov/style.css' %}">
+</head>
+<body>
+    <h1>Počet slov v textu</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="text">{{ text }}</textarea>
+        <input type="submit" value="Spočítej počet slov">
+    </form>
+
+    {% if vysledek is not None %}
+        <p>Počet slov v textu: <strong>{{ vysledek }}</strong></p>
+    {% endif %}
+</body>
+</html>

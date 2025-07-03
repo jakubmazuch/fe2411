@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'pocet_slov',
     'mezery',
     'prevodnik_app',
     'calculator',
