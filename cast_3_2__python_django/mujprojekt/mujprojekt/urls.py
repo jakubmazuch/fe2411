@@ -22,4 +22,5 @@ urlpatterns = [
     path("", include('ahoj_svete.urls')),
     path("calculator_app/", include("calculator.urls")),
     path("prevodnik_app/", include("prevodnik_app.urls")),
+    path("mezery/", include("mezery.urls")),
 ]

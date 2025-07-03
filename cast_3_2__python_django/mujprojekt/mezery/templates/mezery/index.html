@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Počet mezer v textu</title>
+</head>
+<body>
+    <h1>Počet mezer v textu</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="text">{{ text }}</textarea>
+        <input type="submit" value="Spočítej mezery v textu">
+    </form>
+
+    {% if vysledek is not None %}
+        <p>Počet mezer v textu: <strong>{{ vysledek }}</strong></p>
+    {% endif %}
+</body>
+</html>
