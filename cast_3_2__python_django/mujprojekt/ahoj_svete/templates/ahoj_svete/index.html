@@ -1,18 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rozcestník</title>
+    <title>Rozcestník aplikací</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #b2b2b2;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            color: #0066cc;
+        }
+
+        .card p {
+            margin: 0.5rem 0;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: #777;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Zde jsou moje aplikace v Djangu</h1>
-    <ul>
-        <li><a href="/calculator_app/">Kalkulačka</a></li>
-        <li><a href="/prevodnik_app/">Převodník jednotek</a></li>
-    </ul>
+    <h1>Moje aplikace v Djangu</h1>
+    <div class="container">
+        <a href="/calculator_app/" class="card-link">
+            <div class="card">
+                <h2>Kalkulačka</h2>
+                <p>Jednoduchá aritmetická kalkulačka.</p>
+                <p class="date">Vytvořeno: 26. 6. 2025</p>
+            </div>
+        </a>
+        <a href="/prevodnik_app/" class="card-link">
+            <div class="card">
+                <h2>Převodník jednotek</h2>
+                <p>Převod mezi různými jednotkami délky, hmotnosti a teploty.</p>
+                <p class="date">Vytvořeno: 1. 7. 2025</p>
+            </div>
+        </a>
+        <a href="/mezery/" class="card-link">
+            <div class="card">
+                <h2>Počet mezer v textu</h2>
+                <p>Zjistí počet mezer v zadaném textu.</p>
+                <p class="date">Vytvořeno: 3. 7. 2025</p>
+            </div>
+        </a>
+        <a href="/pocet_slov/" class="card-link">
+            <div class="card">
+                <h2>Počet slov v textu</h2>
+                <p>Spočítá slova v libovolném textu.</p>
+                <p class="date">Vytvořeno: 3. 7. 2025</p>
+            </div>
+        </a>
+    </div>
 </body>
 
 </html>

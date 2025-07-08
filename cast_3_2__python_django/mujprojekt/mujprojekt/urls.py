@@ -23,5 +23,6 @@ urlpatterns = [
     path('calculator_app/', include('calculator.urls')),
     path('prevodnik_app/', include('prevodnik_app.urls')),
     path('mezery/', include('mezery.urls')),
-    path('pocet_slov/', include('pocet_slov.urls'))
+    path('pocet_slov/', include('pocet_slov.urls')),
+    path('palindrom/', include('palindrom.urls')),
 ]
