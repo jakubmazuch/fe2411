@@ -25,11 +25,16 @@ def analyzuj(text):
     else:
         prumer = 0
 
+    #počet znaků včetně mezer
+    znaky_vc_mezer = len(text)
+    normostrany = round(znaky_vc_mezer / 1800, 3)
+    
     return {
         'pocet_pismen': len(pismena),
         'pocet_slov': len(slova),
         'pocet_vet': pocet_vet,
         'nej_pismeno': nej_pismeno,
         'prumer': prumer,
-
+        'znaky_vc_mezer': znaky_vc_mezer,
+        'normostrany': normostrany,
     }
