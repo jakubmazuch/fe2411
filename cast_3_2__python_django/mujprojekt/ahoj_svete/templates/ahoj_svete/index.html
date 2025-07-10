@@ -6,24 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rozcestník aplikací</title>
     <style>
+        :root {
+            --primary-color: #0066cc;
+            --background: #f9f9f9;
+            --card-background: #ffffff;
+            --card-border: #e0e0e0;
+            --text-color: #333;
+            --muted-color: #888;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
             margin: 0;
             padding: 2rem;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 2rem;
-            color: #333;
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-color);
         }
 
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -33,38 +45,42 @@
         }
 
         .card {
-            background: #fff;
-            border: 1px solid #b2b2b2;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-            height: 100%;
+            background: var(--card-background);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 12px var(--shadow);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            min-height: 220px;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             cursor: pointer;
         }
 
         .card h2 {
-            font-size: 1.2rem;
-            margin-top: 0;
-            color: #0066cc;
+            font-size: 1.3rem;
+            margin: 0 0 0.8rem 0;
+            color: var(--primary-color);
         }
 
         .card p {
-            margin: 0.5rem 0;
+            flex-grow: 1;
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
 
         .date {
             font-size: 0.85rem;
-            color: #777;
+            color: var(--muted-color);
+            margin-top: auto;
         }
+    </style>
+
     </style>
 </head>
 
@@ -97,6 +113,13 @@
                 <h2>Počet slov v textu</h2>
                 <p>Spočítá slova v libovolném textu.</p>
                 <p class="date">Vytvořeno: 3. 7. 2025</p>
+            </div>
+        </a>
+        <a href="/palindrom/" class="card-link">
+            <div class="card">
+                <h2>Palindrom detektor</h2>
+                <p>Ověří, zda zadaný text je/není palindrom.</p>
+                <p class="date">Vytvořeno: 8. 7. 2025</p>
             </div>
         </a>
     </div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analýza textu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+
+</head>
+
+<body class="bg-light text-center p-5">
+    <div class="container">
+        <h1 class="mb-4">Statistická analýza textu</h1>
+        <form method="post" class="bg-white p-4 rounded shadow-sm d-inline-block text-start">
+            {% csrf_token %}
+            <label for="text" class="form-label">Zadej text k analýze: </label>
+            <textarea name="text" id="text" class="form-control {% if chyba %}is-invalid{% endif %}">
+            {{ text }}
+        </textarea>
+            {% if chyba %}
+            <div class="invalid-feedback">
+                {{ chyba }}
+            </div>
+            {% endif %}
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary my-2" type="submit">Analyzuj</button>
+            </div>
+        </form>
+
+        {% if vysledky %}
+        <div class="mt-5 text-start bg-white p-4 rounded shadow-sm d-inline-block">
+            <h4>Výsledky:</h4>
+            <ul>
+                <li><strong>Počet písmen: </strong>{{ vysledky.pocet_pismen }}</li>
+                <li><strong>Počet slov: </strong>{{ vysledky.pocet_slov }}</li>
+                <li><strong>Počet vět: </strong>{{ vysledky.pocet_vet }}</li>
+                <li><strong>Nejčastější písmeno: </strong>{{ vysledky.nej_pismeno }}</li>
+                <li><strong>Průměrná délka slova: </strong>{{ vysledky.prumer }}</li>
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

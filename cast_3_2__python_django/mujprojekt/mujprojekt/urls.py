@@ -25,4 +25,5 @@ urlpatterns = [
     path('mezery/', include('mezery.urls')),
     path('pocet_slov/', include('pocet_slov.urls')),
     path('palindrom/', include('palindrom.urls')),
+    path('analyza_textu/', include('analyza_textu.urls')),
 ]
