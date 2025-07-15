@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výsledek</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light p-5 text-center">
+    <div class="container">
+        <h1 class="mb-4">Výsledky</h1>
+        <div class="bg-white p-4 rounded shadow-sm d-inline-block text-start">
+            <p><strong>Jméno:</strong>{{ jmeno }}</p>
+            <p><strong>Oblíbená barva: </strong>{{ barva }}</p>
+            <p><strong>Motto: </strong>{{ vzkaz }}</p>
+        </div>
+        <form method="post">
+            {% csrf_token %}            
+            <button type="submit" class="btn btn-danger">Reset dat</button>
+        </form>
+    </div>
+</body>
+
+</html>
