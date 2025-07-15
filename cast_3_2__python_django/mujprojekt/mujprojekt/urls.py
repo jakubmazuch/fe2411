@@ -26,4 +26,5 @@ urlpatterns = [
     path('pocet_slov/', include('pocet_slov.urls')),
     path('palindrom/', include('palindrom.urls')),
     path('analyza_textu/', include('analyza_textu.urls')),
+    path('formular/', include('formular.urls')),
 ]
