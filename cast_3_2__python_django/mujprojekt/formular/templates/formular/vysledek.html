@@ -13,12 +13,12 @@
     <div class="container">
         <h1 class="mb-4">Výsledky</h1>
         <div class="bg-white p-4 rounded shadow-sm d-inline-block text-start">
-            <p><strong>Jméno:</strong>{{ jmeno }}</p>
-            <p><strong>Oblíbená barva: </strong>{{ barva }}</p>
+            <p><strong>Jméno: </strong>{{ jmeno }}</p>
+            <p><strong>Oblíbená barva: </strong><span style="color: {{ barva_css }}">{{ barva }}</span></p>
             <p><strong>Motto: </strong>{{ vzkaz }}</p>
         </div>
         <form method="post">
-            {% csrf_token %}            
+            {% csrf_token %}
             <button type="submit" class="btn btn-danger">Reset dat</button>
         </form>
     </div>

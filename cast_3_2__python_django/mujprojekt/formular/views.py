@@ -3,6 +3,10 @@ from django.shortcuts import render, redirect
 # Create your views here.
 
 
+def index(request):
+    return redirect('formular_krok1')
+
+
 def krok1(request):
     jmeno = ""
     chyba = None
@@ -26,7 +30,8 @@ def krok2(request):
     chyba = None
     barva = ""
 
-    BARVY = ['červená', 'modrá', 'zelená']
+    BARVY = ['červená', 'modrá', 'zelená', 'žlutá',
+             'oranžová', 'fialová', 'hnědá', 'černá', 'růžová']
 
     if request.method == 'POST':
         barva = request.POST.get('barva', '')
@@ -64,8 +69,20 @@ def krok3(request):
 
 
 def vysledek(request):
+    BARVY_CZ_EN = {
+        'červená': 'red',
+        'modrá': 'blue',
+        'zelená': 'green',
+        'žlutá': 'yellow',
+        'oranžová': 'orange',
+        'fialová': 'purple',
+        'hnědá': 'brown',
+        'černá': 'black',
+        'růžová': 'pink',
+    }
     jmeno = request.session.get('jmeno')
     barva = request.session.get('barva')
+    barva_css = BARVY_CZ_EN.get(barva, 'black')
     vzkaz = request.session.get('vzkaz')
 
     if not (jmeno and barva and vzkaz):
@@ -79,5 +96,6 @@ def vysledek(request):
     return render(request, 'formular/vysledek.html', {
         'jmeno': jmeno,
         'barva': barva,
+        'barva_css': barva_css,
         'vzkaz': vzkaz
     })
