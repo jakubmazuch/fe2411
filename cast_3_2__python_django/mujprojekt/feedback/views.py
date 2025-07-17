@@ -7,6 +7,29 @@ def index(request):
     return redirect('feedback_krok1')
 
 
+def login_view(request):
+    chyba = None
+    jmeno = request.session.get('jmeno', '')
+    prijmeni = request.session.get('prijmeni', '')
+
+    if request.method == 'POST':
+        jmeno = request.POST.get('jmeno', '').strip()
+        prijmeni = request.POST.get('prijmeni', '').strip()
+
+        if not jmeno or not prijmeni:
+            chyba = "Vyplň jméno i příjmení"
+        else:
+            request.session['jmeno'] = jmeno
+            request.session['prijmeni'] = prijmeni
+            return redirect('feedback_krok1')
+
+    return render(request, 'feedback/login.html', {
+        'jmeno': jmeno,
+        'prijmeni': prijmeni,
+        'chyba': chyba
+    })
+
+
 def krok1(request):
     # čte hodnotu z uživatelovy relace (tj. session), pokud session neexistuje vrací prázdný řetezec
     hodnoceni = request.session.get('hodnoceni', '')
@@ -54,17 +77,15 @@ def shrnuti(request):
     hodnoceni = request.session.get('hodnoceni')  # string
     komentar = request.session.get('komentar')  # string
     anonymne = request.session.get('anonymne')  # True/False
+    cele_jmeno = request.session.get(
+        'jmeno', '') + ' ' + request.session.get('prijmeni', '')
+    vystup = 'Anonymně' if anonymne else cele_jmeno
 
-    if not (hodnoceni and komentar and anonymne is not None):
-        return redirect('feedback_krok1')
+    if not (hodnoceni and komentar and vystup is not None):
+        return redirect('feedback_login')
 
     if request.method == 'POST':
-        zaznam = f"{datetime.now().isoformat()} | Hodnocení: {hodnoceni} | "
-        if anonymne:
-            zaznam += "Anonymně | "
-        else:
-            zaznam += "Neanonymně | "
-        zaznam += f"Zpětná vazba: {komentar}\n"
+        zaznam = f"{datetime.now().isoformat()} | Hodnocení: {hodnoceni} | {vystup} | Zpětná vazba: {komentar}\n"
 
         with open('feedbacks.txt', 'a', encoding='utf-8') as f:
             f.write(zaznam)
@@ -75,7 +96,7 @@ def shrnuti(request):
     return render(request, 'feedback/shrnuti.html', {
         'hodnoceni': hodnoceni,
         'komentar': komentar,
-        'anonymne': anonymne
+        'vystup': vystup
     })
 
 

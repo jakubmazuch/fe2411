@@ -15,13 +15,7 @@
         <div class="bg-white p-4 rounded shadow-sm d-inline-block text-start">
             <p><strong>Hodnocení: </strong>{{hodnoceni}}</p>
             <p><strong>Zpětná vazba: </strong>{{komentar|linebreaks}}</p>
-            <p><strong>
-                {% if anonymne %}
-                    Anonymně
-                {% else %}
-                    Neanonymně
-                {% endif %}
-            </strong></p>
+            <p><strong>Odesláno jako: </strong>{{vystup}}</p>
 
             <form method="post" class="mt-4">
                 {% csrf_token %}
