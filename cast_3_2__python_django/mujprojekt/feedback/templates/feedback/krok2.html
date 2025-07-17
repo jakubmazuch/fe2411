@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krok 2 - Komentář</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light p-5 text-center">
+    <div class="container">
+        <h1 class="mb-4">Komentař</h1>
+        <form method="post" class="bg-white p-4 rounded shadow-sm d-inline-block text-start">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="komentar" class="form-label">Napište nám svoji zpětnou vazbu:</label>
+                <textarea name="komentar" id="komentar" rows="5" class="form-control {% if chyba %}is-invalid{% endif %}" required>
+                    {{ komentar }}
+                </textarea>
+
+                {% if chyba %}
+                    <div class="invalid-feedback">{{ chyba }}</div>
+                {% endif %}
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" name="anonymne" id="anonymne" class="form-check-input" {% if anonymne %}checked{% endif %}>
+                <label for="anonymne" class="form-check-label">Nechci zobrazit své jméno</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Pokračovat</button>
+        </form>
+    </div>
+</body>
+</html>

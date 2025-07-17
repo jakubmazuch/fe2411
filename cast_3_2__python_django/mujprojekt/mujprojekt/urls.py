@@ -27,4 +27,5 @@ urlpatterns = [
     path('palindrom/', include('palindrom.urls')),
     path('analyza_textu/', include('analyza_textu.urls')),
     path('formular/', include('formular.urls')),
+    path('feedback/', include('feedback.urls')),
 ]
