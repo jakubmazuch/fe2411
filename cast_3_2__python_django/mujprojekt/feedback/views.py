@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from datetime import datetime
+from .utils import obsahuje_sproste
 # Create your views here.
 
 
@@ -61,6 +62,8 @@ def krok2(request):
 
         if not komentar:
             chyba = "Zpětná vazba nemůže být prázdná."
+        elif obsahuje_sproste(komentar):
+            chyba = "Zpětná vazba obsahuje nevhodná slova. Zkus to prosím formulovat slušně."
         else:
             request.session['komentar'] = komentar
             request.session['anonymne'] = anonymne
