@@ -28,4 +28,5 @@ urlpatterns = [
     path('analyza_textu/', include('analyza_textu.urls')),
     path('formular/', include('formular.urls')),
     path('feedback/', include('feedback.urls')),
+    path('navstevni_kniha/', include('navstevni_kniha.urls')),
 ]

@@ -1,0 +1,3 @@
+čt 24.7.:
+admin přístup + mazání záznamů
+login?

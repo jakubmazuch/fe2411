@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souhrn zpětné vazby</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light p-5">
+    <div class="container">
+        <h1 class="mb-4">Kniha návštěv</h1>
+        <!-- Fomulář -->
+        <form method="post" class="bg-white p-4 rounded shadow-sm">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="jmeno" class="form-label">Jméno:</label>
+                <input type="text" name="jmeno" id="jmeno" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="zprava" class="form-label">Zpráva:</label>
+                <textarea name="zprava" id="zprava" class="form-control" rows="4" required></textarea>
+            </div>
+
+            {% if chyba %}
+            <div class="alert alert-danger">{{ chyba }}</div>
+            {% endif %}
+
+            <button type="submit" class="btn btn-primary">Odeslat</button>
+        </form>
+
+        <!-- Kniha návštěv -->
+        {% if zaznamy %}
+        <h2 class="mb-2">Přechozí záznamy</h2>
+        <ul class="list-group">
+            {% for z in zaznamy %}
+            <li class="list-group-item">
+                <strong>{{z.jmeno}}</strong>
+                <span class="text-muted small float-end">
+                    {{z.datum_cas|date:"d.m.Y H:i:s"}}
+                </span>
+                <br>
+                {{z.zprava}}
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="text-muted">Zatím žádné zázanmy</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>

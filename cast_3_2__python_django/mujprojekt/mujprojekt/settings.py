@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'navstevni_kniha',
     'feedback',
     'formular',
     'analyza_textu',
