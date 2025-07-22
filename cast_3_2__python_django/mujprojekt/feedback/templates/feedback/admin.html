@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přehled zpětných vazeb</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light p-5 text-center">
+    <div class="container">
+        <h1 class="mb-4">Přehled zpětných vazeb</h1>
+        
+        {% if zaznamy %}
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Datum a čas</th>
+                    <th>Hodnocení</th>
+                    <th>Autor</th>
+                    <th>Komentář</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for z in zaznamy %}
+                <tr>
+                    <td>{{ z.datum }}</td>
+                    <td>{{ z.hodnoceni }}</td>
+                    <td>{{ z.jmeno }}</td>
+                    <td>{{ z.komentar }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="alert alert-info">Žádné zpětné vazby zatím nebyly odeslány</div>
+        {% endif %}
+
+    </div>
+</body>
+
+</html>

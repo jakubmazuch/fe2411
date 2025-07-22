@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from datetime import datetime
 from .utils import obsahuje_sproste
+import os
 # Create your views here.
 
 
@@ -105,3 +106,33 @@ def shrnuti(request):
 
 def dekujeme(request):
     return render(request, 'feedback/dekujeme.html')
+
+
+def admin_vypis(request):
+    cesta = os.path.join('feedbacks.txt')  # "../feedbacks.txt"
+    zaznamy = []
+
+    if os.path.exists(cesta):
+        with open(cesta, 'r', encoding='utf-8') as f:
+            for radek in f:
+                radek = radek.strip()
+                if radek:
+                    # očekávaný formát: "datum | hodnoceni | jméno | komentář"
+                    casti = radek.split('|')
+                    if len(casti) == 4:
+                        cas_iso = casti[0].strip()
+                        try:
+                            dt = datetime.fromisoformat(cas_iso)
+                            cas_cz = dt.strftime('%d. %m. %Y, %H:%M:%S')
+                        except ValueError:
+                            cas_cz = cas_iso # fallback
+                        
+                        zaznamy.append({
+                            'datum': cas_cz,
+                            'hodnoceni': casti[1].strip().replace('Hodnocení: ', ''),
+                            'jmeno': casti[2].strip(),
+                            'komentar': casti[3].strip().replace('Zpětná vazba: ', ''),
+                        })
+    return render(request, 'feedback/admin.html', {
+        'zaznamy': zaznamy,
+    })

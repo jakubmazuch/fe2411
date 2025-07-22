@@ -7,4 +7,5 @@ urlpatterns = [
     path('krok2/', views.krok2, name='feedback_krok2'),
     path('shrnuti/', views.shrnuti, name='feedback_shrnuti'),
     path('dekujeme/', views.dekujeme, name='feedback_dekujeme'),
+    path('admin/', views.admin_vypis, name='feedback_admin')
 ]
