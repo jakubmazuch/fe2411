@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Zaznam
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .utils import obsahuje_sproste
 
 # Create your views here.
 
@@ -15,6 +16,8 @@ def kniha_navstev(request):
 
         if not jmeno or not zprava:
             chyba = "Vyplň prosím obě položky."
+        elif obsahuje_sproste(zprava):
+            chyba = "Vaše zprva obsahuje nevhodná slova. Zkus to prosím formulovat slušně."
         else:
             Zaznam.objects.create(jmeno=jmeno, zprava=zprava)
             return redirect('navstevni_kniha')
@@ -68,3 +71,8 @@ def smaz_zaznam(request, zaznam_id):
     return render(request, 'navstevni_kniha/confirm_delete.html', {
         'zaznam': zaznam,
     })
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')

@@ -12,7 +12,17 @@
 <body class="bg-light p-5">
     <div class="container">
         <h1 class="mb-4">Správa záznamů</h1>
+        <!-- Zobrazení přihlášení -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                Přihlášen jako {{ request.user.username }}
+            </div>
+            <div>
+                <a href="{% url 'logout' %}" class="btn btn-outline-secondary btn-sm">Odhlásit se</a>
+            </div>
+        </div>
 
+        <!-- Výčet záznamů -->
         {% if zaznamy %}
         <ul class="list-group">
             {% for z in zaznamy %}
@@ -26,10 +36,7 @@
                     {{z.zprava}}
                 </div>
                 <div>
-                    <form action="{% url 'smaz_zaznam' z.id %}" method="post">
-                        {% csrf_token %}
-                        <button class="btn btn-sm btn-danger">🗑️</button>
-                    </form>
+                    <a href="{% url 'smaz_zaznam' z.id %}" class="btn btn-sm btn-danger">🗑️</a>
                 </div>
             </li>
             {% endfor %}

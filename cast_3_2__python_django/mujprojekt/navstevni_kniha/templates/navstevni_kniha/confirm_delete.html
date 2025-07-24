@@ -11,7 +11,7 @@
 <body class="bg-light text-center p-5">
     <div class="container">
         <h2 class="mb-4">Opravdu smazat tento záznam?</h2>
-        <p><strong>{{zaznam.jmeno}}</strong>{{zaznam.zprava}}</p>
+        <p><strong>{{zaznam.jmeno}}</strong><br>{{zaznam.zprava}}</p>
 
         <form method="post">
             {% csrf_token %}
