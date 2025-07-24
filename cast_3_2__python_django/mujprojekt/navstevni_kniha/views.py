@@ -17,7 +17,7 @@ def kniha_navstev(request):
         if not jmeno or not zprava:
             chyba = "Vyplň prosím obě položky."
         elif obsahuje_sproste(zprava):
-            chyba = "Vaše zprva obsahuje nevhodná slova. Zkus to prosím formulovat slušně."
+            chyba = "Vaše zpráva obsahuje nevhodná slova. Zkus to prosím formulovat slušně."
         else:
             Zaznam.objects.create(jmeno=jmeno, zprava=zprava)
             return redirect('navstevni_kniha')
