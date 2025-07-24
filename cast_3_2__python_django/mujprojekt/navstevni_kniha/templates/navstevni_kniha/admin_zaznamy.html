@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Správa záznamů</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light p-5">
+    <div class="container">
+        <h1 class="mb-4">Správa záznamů</h1>
+
+        {% if zaznamy %}
+        <ul class="list-group">
+            {% for z in zaznamy %}
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div>
+                    <strong>{{z.jmeno}}</strong>
+                    <span class="text-muted small float-end">
+                        {{z.datum_cas|date:"d.m.Y H:i:s"}}
+                    </span>
+                    <br>
+                    {{z.zprava}}
+                </div>
+                <div>
+                    <form action="{% url 'smaz_zaznam' z.id %}" method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-sm btn-danger">🗑️</button>
+                    </form>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="text-muted">Zatím žádné zázanmy</p>
+        {% endif %}
+
+    </div>
+</body>
+
+</html>
