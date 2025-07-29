@@ -29,4 +29,5 @@ urlpatterns = [
     path('formular/', include('formular.urls')),
     path('feedback/', include('feedback.urls')),
     path('navstevni_kniha/', include('navstevni_kniha.urls')),
+    path('ukoly/', include('todo_app.urls')),
 ]

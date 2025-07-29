@@ -1,0 +1,5 @@
+Registrace a přihlášení/odhlášení uživatelů přes webové formuláře (bez admina)?
+Upozornění na prošlé úkoly
+Zobrazení úkolů podle termínu
+Filtrování (dokončené vs. nedokončené)
+Editování úkolů
