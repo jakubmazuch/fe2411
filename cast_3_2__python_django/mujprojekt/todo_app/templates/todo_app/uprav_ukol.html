@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upravit úkol</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light p-4">
+    <div class="container">
+        <h1 class="mb-4">Úprava úkolu: <em>{{ ukol.nazev }}</em></h1>
+        <form method="post" class="bg-white p-4 rounded shadow-sm">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary mt-2">Uložit změny</button>
+        </form>
+        <a href="{% url 'seznam_ukolu' %}" class="btn btn-secondary mt-3">Zpět na seznam úkolů</a>
+    </div>
+</body>
+</html>

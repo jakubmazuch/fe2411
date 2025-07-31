@@ -8,4 +8,5 @@ urlpatterns = [
     path('pridat/', views.pridat_ukol, name='pridat_ukol'),
     path('hotovo/<int:ukol_id>', views.oznac_hotovo, name='oznac_hotovo'),
     path('smazat/<int:ukol_id>', views.smaz_ukol, name='smaz_ukol'),
+    path('ukol/<int:ukol_id>/uprav/', views.uprav_ukol, name='uprav_ukol'),
 ]

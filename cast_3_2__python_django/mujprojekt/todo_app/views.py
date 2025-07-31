@@ -35,14 +35,18 @@ def logout_view(request):
 def seznam_ukolu(request):
     # hodnota může být 'hotove' / 'nehotove' / None
     stav = request.GET.get('stav')
+    priorita = request.GET.get('priorita')
 
-    ukoly = Ukol.objects.annotate(
+    ukoly = Ukol.objects.filter(user=request.user).annotate(
         ma_termin=Case(
             When(termin__isnull=True, then=Value(False)),
             default=Value(True),
             output_field=BooleanField()
         )
     ).order_by('-ma_termin', 'termin')  # databázový dotaz
+
+    if priorita in ['N', 'S', 'V']:
+        ukoly = ukoly.filter(priorita=priorita)
 
     if stav == 'hotove':
         ukoly = ukoly.filter(hotovo=True)
@@ -56,7 +60,8 @@ def seznam_ukolu(request):
 
     return render(request, 'todo_app/seznam.html', {
         'ukoly': ukoly,
-        'stav': stav
+        'stav': stav,
+        'filtr_priorita': priorita,
     })
 
 
@@ -92,3 +97,22 @@ def smaz_ukol(request, ukol_id):
     if request.method == 'POST':
         ukol.delete()
     return redirect('seznam_ukolu')
+
+
+@login_required
+def uprav_ukol(request, ukol_id):
+    ukol = get_object_or_404(Ukol, id=ukol_id, user=request.user)
+
+    if request.method == 'POST':
+        form = UkolForm(request.POST, instance=ukol)
+        if form.is_valid():
+            form.save()
+            return redirect('seznam_ukolu')
+
+    else:
+        form = UkolForm(instance=ukol)
+
+    return render(request, 'todo_app/uprav_ukol.html', {
+        'form': form,
+        'ukol': ukol,
+    })
