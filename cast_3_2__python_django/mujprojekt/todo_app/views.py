@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.db.models import Case, When, Value, BooleanField
 from .forms import UkolForm
 from .models import Ukol
 
@@ -32,7 +33,21 @@ def logout_view(request):
 
 @login_required
 def seznam_ukolu(request):
-    ukoly = Ukol.objects.filter(user=request.user).order_by('-vytvoreno')
+    # hodnota může být 'hotove' / 'nehotove' / None
+    stav = request.GET.get('stav')
+
+    ukoly = Ukol.objects.annotate(
+        ma_termin=Case(
+            When(termin__isnull=True, then=Value(False)),
+            default=Value(True),
+            output_field=BooleanField()
+        )
+    ).order_by('-ma_termin', 'termin')  # databázový dotaz
+
+    if stav == 'hotove':
+        ukoly = ukoly.filter(hotovo=True)
+    elif stav == 'nehotove':
+        ukoly = ukoly.filter(hotovo=False)
 
     for ukol in ukoly:
         ukol.je_prosly = False
@@ -40,7 +55,8 @@ def seznam_ukolu(request):
             ukol.je_prosly = True
 
     return render(request, 'todo_app/seznam.html', {
-        'ukoly': ukoly
+        'ukoly': ukoly,
+        'stav': stav
     })
 
 
