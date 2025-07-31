@@ -1,14 +1,44 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 from .forms import UkolForm
 from .models import Ukol
 
 # Create your views here.
 
 
+def login_view(request):
+    chyba = None
+    if request.method == 'POST':
+        username = request.POST.get('username', '').strip()
+        password = request.POST.get('password', '').strip()
+
+        user = authenticate(request, username=username, password=password)
+
+        if user:
+            login(request, user)
+            return redirect('seznam_ukolu')
+        else:
+            chyba = "Neplatné přihlašovací údaje"
+
+    return render(request, 'todo_app/login.html', {'chyba': chyba})
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+
+
 @login_required
 def seznam_ukolu(request):
     ukoly = Ukol.objects.filter(user=request.user).order_by('-vytvoreno')
+
+    for ukol in ukoly:
+        ukol.je_prosly = False
+        if ukol.termin and ukol.termin < timezone.now().date() and not ukol.hotovo:
+            ukol.je_prosly = True
+
     return render(request, 'todo_app/seznam.html', {
         'ukoly': ukoly
     })
