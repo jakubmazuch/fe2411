@@ -1,0 +1,47 @@
+{% extends 'sbirka_medii/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Moje položky</h2>
+
+    <a href="{% url 'pridat_polozku' %}" class="btn btn-success mb-3">Přidat novou položku</a>
+
+    <form method="get" class="mb-4 row g-2">
+        <div class="col-md-3">
+            <select name="stav" class="form-select" onchange="this.form.submit()">
+                <option value="">Všechny stavy</option>
+                <option value="chci" {% if request.GET.stav == 'chci' %}selected{% endif %}>Chci</option>
+                <option value="zacatek" {% if request.GET.stav == 'zacatek' %}selected{% endif %}>Začátek</option>
+                <option value="hotovo" {% if request.GET.stav == 'hotovo' %}selected{% endif %}>Hotovo</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select name="hodnoceni" class="form-select" onchange="this.form.submit()">
+                <option value="">Všechna hodnocení</option>
+                {% for i in "12345" %}
+                    <option value="{{ i }}" {% if request.GET.hodnoceni == i %}selected{% endif %}>{{ i }} ⭐</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+
+    <div class="row">
+        {% for polozka in polozky %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ polozka.nazev }}</h5>
+                    <p class="card-text">{{ polozka.popis|default:"(bez popisu)" }}</p>
+                    <p><strong>Stav:</strong> {{ polozka.get_stav_display }}<br>
+                       <strong>Hodnocení:</strong> {{ polozka.hodnoceni }} ⭐</p>
+                    <a href="{% url 'upravit_polozku' polozka.pk %}" class="btn btn-sm btn-primary">Upravit</a>
+                    <a href="{% url 'smazat_polozku' polozka.pk %}" class="btn btn-sm btn-danger">Smazat</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Nemáš žádné položky.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

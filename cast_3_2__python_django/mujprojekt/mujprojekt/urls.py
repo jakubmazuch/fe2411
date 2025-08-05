@@ -30,4 +30,5 @@ urlpatterns = [
     path('feedback/', include('feedback.urls')),
     path('navstevni_kniha/', include('navstevni_kniha.urls')),
     path('ukoly/', include('todo_app.urls')),
+    path('sbirka_medii/', include('sbirka_medii.urls')),
 ]

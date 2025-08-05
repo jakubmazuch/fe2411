@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'sbirka_medii',
     'todo_app',
     'navstevni_kniha',
     'feedback',
