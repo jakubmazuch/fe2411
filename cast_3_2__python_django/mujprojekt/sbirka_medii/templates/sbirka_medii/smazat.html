@@ -1,0 +1,13 @@
+<!-- login.html -->
+{% extends "sbirka_medii/base.html" %}
+{% block content %}
+    <div class="container mt-4">
+        <h2>Opravdu chcete smazat film: {{ polozka.nazev }}?</h2>
+        <form method="post" action="/sbirka_medii/smazat/{{ polozka.id }}/">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a href="{% url 'seznam_polozek' %}" class="btn btn-secondary">Zpátky</a>
+            <button class="btn btn-primary">Smazat</button>
+        </form>
+    </div>
+{% endblock %}
