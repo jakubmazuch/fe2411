@@ -29,16 +29,12 @@
         c) filtr času z chatu
     */
     function updateChat() {
-        fetch("https://itstep-chat.nullptr.cz?room=hlavni", {
+        fetch("http://localhost:8000/chat/api", {
             method: "GET"
         })
             .then(response => {return response.text();})
             .then(text => {
                 const chat = document.getElementById("chat-body");
-
-                text.split("\n").forEach(line => {
-                    (line.split(" ")[1])
-                })
 
                 chat.innerText = text;
             });
