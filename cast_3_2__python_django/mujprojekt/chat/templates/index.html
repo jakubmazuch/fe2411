@@ -42,9 +42,15 @@
 
     // send message
     document.getElementById("send-button").addEventListener("click", function() {
-        fetch("https://itstep-chat.nullptr.cz?room=hlavni", {
+        let form = new FormData();
+        form.append("message", document.getElementById("chat-input").value);
+
+        fetch("http://localhost:8000/chat/api", {
             method: "POST",
-            body: document.getElementById("chat-input").value
+            body: form,
+            headers: {
+                "X-CSRFToken": "{{ csrf_token }}"
+            }
         })
             .then(() => document.getElementById("chat-input").value = "")
     });
@@ -52,7 +58,6 @@
     document.getElementById("chat-refresh").addEventListener("click", updateChat);
 
     setInterval(updateChat, 500);
-
 
     </script>
 {% endblock %}
