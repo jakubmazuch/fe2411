@@ -1,0 +1,62 @@
+<!-- login.html -->
+{% extends "base.html" %}
+{% block content %}
+    <style>
+        #chat-body {
+            height: 400px;
+            overflow-y: scroll;
+        }
+    </style>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">Chat</div>
+            <div id="chat-body" class="card-body">
+                Zatím nic nenačteno :(
+            </div>
+            <div class="card-footer">
+                <button id="chat-refresh" class="btn btn-primary">Načíst</button>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Zpráva" aria-label="Zpráva" aria-describedby="send-button" id="chat-input">
+            <button class="btn btn-outline-danger" type="button" id="send-button">Odeslat</button>
+        </div>
+    </div>
+    <script>
+    /*
+        Ukol:
+        c) filtr času z chatu
+    */
+    function updateChat() {
+        fetch("https://itstep-chat.nullptr.cz?room=hlavni", {
+            method: "GET"
+        })
+            .then(response => {return response.text();})
+            .then(text => {
+                const chat = document.getElementById("chat-body");
+
+                text.split("\n").forEach(line => {
+                    (line.split(" ")[1])
+                })
+
+                chat.innerText = text;
+            });
+    }
+
+    // send message
+    document.getElementById("send-button").addEventListener("click", function() {
+        fetch("https://itstep-chat.nullptr.cz?room=hlavni", {
+            method: "POST",
+            body: document.getElementById("chat-input").value
+        })
+            .then(() => document.getElementById("chat-input").value = "")
+    });
+
+    document.getElementById("chat-refresh").addEventListener("click", updateChat);
+
+    setInterval(updateChat, 500);
+
+
+    </script>
+{% endblock %}
