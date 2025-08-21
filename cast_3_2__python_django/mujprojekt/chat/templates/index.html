@@ -24,12 +24,8 @@
         </div>
     </div>
     <script>
-    /*
-        Ukol:
-        c) filtr času z chatu
-    */
     function updateChat() {
-        fetch("http://localhost:8000/chat/api", {
+        fetch("http://[::1]:8000/chat/api", {
             method: "GET"
         })
             .then(response => {return response.text();})
@@ -45,7 +41,7 @@
         let form = new FormData();
         form.append("message", document.getElementById("chat-input").value);
 
-        fetch("http://localhost:8000/chat/api", {
+        fetch("http://[::1]:8000/chat/api", {
             method: "POST",
             body: form,
             headers: {
