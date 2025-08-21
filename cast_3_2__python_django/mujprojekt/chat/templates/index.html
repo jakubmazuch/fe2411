@@ -59,5 +59,41 @@
 
     setInterval(updateChat, 500);
 
+
+
+
+    const bannedWords = ["debil", "koule", "monitor", "pes", "dumbass"]; // vsechna pismenka budou mala
+
+    document.addEventListener("keyup", event => {
+        // letter keys only
+        if (event.key.length !== 1) return;
+
+        let original = document.getElementById("chat-input").value;
+        let ocistenyText = original;
+
+        // basic filtering
+        ocistenyText = ocistenyText
+            .toLowerCase()
+            .replaceAll("@", "a")
+            .replaceAll("$", "s");
+
+        bannedWords.forEach(function(word) {
+            // find word
+            if (ocistenyText.includes(word)) {
+                // find first occurence of word
+                while (ocistenyText.indexOf(word) !== -1) {
+                    const start = ocistenyText.indexOf(word);
+                    const end = start + word.length;
+
+                    // replace word with ***
+                    ocistenyText = ocistenyText.slice(0, start) + "***" + ocistenyText.slice(end);
+                    original = original.slice(0, start) + "***" + original.slice(end);
+                }
+
+                document.getElementById("chat-input").value = original;
+            }
+        })
+    })
+
     </script>
 {% endblock %}
