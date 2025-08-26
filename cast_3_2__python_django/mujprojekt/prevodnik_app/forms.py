@@ -4,7 +4,8 @@ JEDNOTKY = [
     ('m', 'metry'),
     ('cm', 'centimetry'),
     ('inch', 'palce'),
-    ('ft', 'stopy')
+    ('ft', 'stopy'),
+    ('yd', 'yardy')
 ]
 
 

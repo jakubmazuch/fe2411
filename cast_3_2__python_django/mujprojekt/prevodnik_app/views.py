@@ -10,6 +10,7 @@ def preved_hodnotu(hodnota, jednotka_od, jednotka_do):
         'cm': 100,
         'inch': 39.3700787,
         'ft': 3.2808,
+        'yd': 0.9144,
     }
     hodnota_v_metrech = hodnota / koeficienty[jednotka_od]
     vysledek = hodnota_v_metrech * koeficienty[jednotka_do]

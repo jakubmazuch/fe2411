@@ -1,10 +1,14 @@
 from django.shortcuts import render
+import unicodedata
 
 # Create your views here.
 
 
 def je_palindrom(jednorozec):
     text_cisty = ''.join(c.lower() for c in jednorozec if c.isalnum())
+    text_cisty = unicodedata.normalize("NFD", text_cisty) # novinka 250826
+    text_cisty = ''.join(
+        c for c in text_cisty if unicodedata.category(c) != 'Mn') # novinka 250826
     return text_cisty == text_cisty[::-1]
 
 

@@ -17,3 +17,7 @@ def vysob(a, b):
 
 def vydel(a, b):
     return float(a) / float(b)
+
+
+def mocni(a, b):
+    return float(a) ** float(b)

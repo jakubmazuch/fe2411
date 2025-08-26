@@ -36,6 +36,7 @@ def seznam_ukolu(request):
     # hodnota může být 'hotove' / 'nehotove' / None
     stav = request.GET.get('stav')
     priorita = request.GET.get('priorita')
+    kategorie = request.GET.get('kategorie')
 
     ukoly = Ukol.objects.filter(user=request.user).annotate(
         ma_termin=Case(
@@ -45,13 +46,21 @@ def seznam_ukolu(request):
         )
     ).order_by('-ma_termin', 'termin')  # databázový dotaz
 
+    # Filtr priorita
     if priorita in ['N', 'S', 'V']:
         ukoly = ukoly.filter(priorita=priorita)
 
+    # Filtr stav
     if stav == 'hotove':
         ukoly = ukoly.filter(hotovo=True)
     elif stav == 'nehotove':
         ukoly = ukoly.filter(hotovo=False)
+
+    # FIltr kategorie
+    if kategorie:
+        ukoly = ukoly.filter(kategorie=kategorie)
+
+    kategorie_volby = getattr(Ukol, "KATEGORIE_CHOICES", [])
 
     for ukol in ukoly:
         ukol.je_prosly = False
@@ -62,6 +71,8 @@ def seznam_ukolu(request):
         'ukoly': ukoly,
         'stav': stav,
         'filtr_priorita': priorita,
+        'kategorie_volby': kategorie_volby,
+        'aktivni_kategorie': kategorie or "",
     })
 
 

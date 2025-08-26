@@ -11,6 +11,12 @@
 
 <body class="bg-light p-4">
     <div class="container">
+        <div class="col-md-auto text-end">
+            {% if user.is_authenticated %}
+            Přihlášen: <strong>{{ user.username }}</strong>
+            <a href="{% url 'logout' %}" class="btn btn-outline-secondary">Odhlásit se</a>
+            {% endif %}
+        </div>
         <h1 class="mb-4">Moje úkoly</h1>
 
         <div class="row align-items-center mb-3">
@@ -22,6 +28,16 @@
                         <option value="N" {% if filtr_priorita == "N" %}selected{% endif %}>Nízká</option>
                         <option value="S" {% if filtr_priorita == "S" %}selected{% endif %}>Střední</option>
                         <option value="V" {% if filtr_priorita == "V" %}selected{% endif %}>Vysoká</option>
+                    </select>
+
+                    <label for="priorita" class="form-label">Filtrovat podle kategorie:</label>
+                    <select name="kategorie" id="kategorie" class="form-select w-auto d-inline-block">
+                        <option value="">Vše</option>
+                        {% for val, label in kategorie_volby %}
+                        <option value="{{ val }}" {% if aktivni_kategorie == val %}selected{% endif %}>
+                            {{ label }}
+                        </option>
+                        {% endfor %}
                     </select>
                     <button type="submit" class="btn btn-outline-primary btn-sm">Filtrovat</button>
                 </form>
@@ -36,15 +52,12 @@
                         class="btn btn-outline-primary {% if stav == 'nehotove' %}active{% endif %}">Nedokončené</a>
                 </div>
             </div>
+
+
             <div class="col-md-auto">
                 <a href="{% url 'pridat_ukol' %}" class="btn btn-primary mx-4">Přidat úkol</a>
             </div>
-            <div class="col-md-auto text-end">
-                {% if user.is_authenticated %}
-                Přihlášen: <strong>{{ user.username }}</strong>
-                <a href="{% url 'logout' %}" class="btn btn-outline-secondary">Odhlásit se</a>
-                {% endif %}
-            </div>
+
         </div>
         {% if ukoly %}
         <ul class="list-group">

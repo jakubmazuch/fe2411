@@ -30,6 +30,9 @@ def kalkulacka(request):
         elif request.POST["operator"] == "/":
             vysledek = models.vydel(request.POST["a"], request.POST["b"])
 
+        elif request.POST["operator"] == "^":
+            vysledek = models.mocni(request.POST["a"], request.POST["b"])
+        
         else:
             error_msg = "Chyba"
             return render(request, "calculator/kalkulacka.html", dict(error_msg=error_msg, vysledek=vysledek))
