@@ -32,4 +32,5 @@ urlpatterns = [
     path('ukoly/', include('todo_app.urls')),
     path('sbirka_medii/', include('sbirka_medii.urls')),
     path('chat/', include('chat.urls')),
+    path('registrace/', include('registrace.urls')),
 ]

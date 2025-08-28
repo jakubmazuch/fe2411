@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registrace',
     'chat',
     'sbirka_medii',
     'todo_app',
